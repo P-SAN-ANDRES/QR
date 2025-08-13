@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cuenta Empresa – TRANSPORTES TRANSMAT LTDA.</title>
+  <meta name="description" content="Datos de cuenta de TRANSPORTES TRANSMAT LTDA. para pagos y transferencias." />
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #0ea5e9;
+      --ring: rgba(14,165,233,0.3);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg); color: var(--text);
+      display: grid; min-height: 100dvh; place-items: center; padding: 24px;
+    }
+    .card {
+      width: 100%; max-width: 680px; background: var(--card); border-radius: var(--radius);
+      box-shadow: 0 10px 25px rgba(2, 6, 23, 0.08);
+      border: 1px solid #e5e7eb; overflow: hidden;
+    }
+    header {
+      padding: 20px 24px; background: linear-gradient(180deg, #e6f6fe, #ffffff);
+      border-bottom: 1px solid #e5e7eb;
+    }
+    h1 { margin: 0; font-size: 1.25rem; letter-spacing: .04em; }
+    .subtitle { margin-top: 6px; color: var(--muted); font-size: .95rem; }
+    .content { padding: 20px 24px; }
+    .row {
+      display: grid; grid-template-columns: 170px 1fr auto; gap: 12px; align-items: center;
+      padding: 12px 0; border-bottom: 1px dashed #e5e7eb;
+    }
+    .row:last-child { border-bottom: none; }
+    .label { color: var(--muted); font-weight: 600; }
+    .value code {
+      background: #f1f5f9; padding: 6px 8px; border-radius: 8px; display: inline-block;
+      border: 1px solid #e2e8f0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: .95rem;
+    }
+    .actions button {
+      padding: 8px 12px; border-radius: 10px; border: 1px solid #e2e8f0; cursor: pointer;
+      background: #fff; transition: transform .02s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .actions button:hover { border-color: var(--accent); box-shadow: 0 0 0 4px var(--ring); }
+    .actions button:active { transform: scale(.98); }
+    .footer {
+      padding: 16px 24px; color: var(--muted); font-size: .9rem; border-top: 1px solid #e5e7eb;
+      display: flex; gap: 12px; flex-wrap: wrap; justify-content: space-between;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    @media (max-width: 560px) {
+      .row { grid-template-columns: 1fr; gap: 6px; }
+      .actions { display: flex; gap: 8px; }
+      .value code { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-label="Datos bancarios de la empresa">
+    <header>
+      <h1>CUENTA EMPRESA</h1>
+      <div class="subtitle">Datos para transferencias – TRANSPORTES TRANSMAT LTDA.</div>
+    </header>
+    <section class="content">
+      <div class="row">
+        <div class="label">Razón social</div>
+        <div class="value"><code>TRANSPORTES TRANSMAT LTDA.</code></div>
+        <div class="actions"><button data-copy="TRANSPORTES TRANSMAT LTDA.">Copiar</button></div>
+      </div>
+      <div class="row">
+        <div class="label">RUT</div>
+        <div class="value"><code>76.228.396-4</code></div>
+        <div class="actions"><button data-copy="76.228.396-4">Copiar</button></div>
+      </div>
+      <div class="row">
+        <div class="label">Banco</div>
+        <div class="value"><code>BANCO ESTADO</code></div>
+        <div class="actions"><button data-copy="BANCO ESTADO">Copiar</button></div>
+      </div>
+      <div class="row">
+        <div class="label">Tipo cuenta</div>
+        <div class="value"><code>CUENTA CORRIENTE</code></div>
+        <div class="actions"><button data-copy="CUENTA CORRIENTE">Copiar</button></div>
+      </div>
+      <div class="row">
+        <div class="label">N° cuenta</div>
+        <div class="value"><code>1300244404</code></div>
+        <div class="actions"><button data-copy="1300244404">Copiar</button></div>
+      </div>
+      <div class="row">
+        <div class="label">Correo</div>
+        <div class="value"><code>contacto@pullmansa.cl</code></div>
+        <div class="actions">
+          <button data-copy="contacto@pullmansa.cl">Copiar</button>
+        </div>
+      </div>
+    </section>
+    <div class="footer">
+      <span>Si los datos cambian, actualiza esta página y el QR seguirá funcionando.</span>
+      <a href="mailto:contacto@pullmansa.cl">Escríbenos</a>
+    </div>
+  </main>
+
+  <script>
+    // Copiar al portapapeles con feedback
+    document.querySelectorAll('button[data-copy]').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const text = btn.getAttribute('data-copy');
+        try {
+          await navigator.clipboard.writeText(text);
+          const prev = btn.textContent;
+          btn.textContent = "¡Copiado!";
+          setTimeout(() => btn.textContent = prev, 1200);
+        } catch {
+          // Fallback
+          const ta = document.createElement('textarea');
+          ta.value = text; document.body.appendChild(ta);
+          ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+          const prev = btn.textContent;
+          btn.textContent = "¡Copiado!";
+          setTimeout(() => btn.textContent = prev, 1200);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
