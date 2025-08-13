@@ -6,255 +6,259 @@
   <title>Cuenta Empresa – San Andrés</title>
   <meta name="description" content="Datos para transferencias de TRANSPORTES TRANSMAT LTDA. (San Andrés)." />
   <style>
+    /* --- Paleta de Colores y Variables --- */
     :root {
-      --bg: #0b1220;         /* fondo oscuro elegante */
-      --card: #0f172a;       /* panel */
-      --text: #e5e7eb;       /* texto principal */
-      --muted: #94a3b8;      /* texto secundario */
-      --accent: #0ea5e9;     /* acento */
-      --ok: #22c55e;
-      --ring: rgba(14,165,233,.35);
-      --radius: 18px;
-      --border: #1f2937;
-      --chip: #0b3b51;
+      --bg-color: #f8fafc;        /* Fondo claro y limpio */
+      --card-bg: #ffffff;         /* Fondo de la tarjeta */
+      --text-primary: #1e293b;    /* Texto principal (casi negro) */
+      --text-secondary: #64748b;  /* Texto secundario (gris) */
+      --text-accent: #3b82f6;      /* Texto de acento (azul) */
+      --border-color: #e2e8f0;    /* Color de borde sutil */
+      --success-color: #16a34a;   /* Color para estado de éxito */
+      --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     }
+
+    /* --- Estilos Base --- */
     * { box-sizing: border-box; }
-    html,body { height: 100%; }
+    html, body { height: 100%; }
     body {
       margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: radial-gradient(1000px 600px at 20% -10%, #11324a 0%, transparent 60%),
-                  radial-gradient(900px 500px at 120% 10%, #2a1b53 0%, transparent 55%),
-                  var(--bg);
-      color: var(--text);
-      display: grid; place-items: start center;
-      padding: 28px 16px 56px;
+      font-family: var(--font-sans);
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      display: grid;
+      place-items: center;
+      padding: 24px 16px;
     }
 
-    .wrap { width: 100%; max-width: 780px; }
+    /* --- Contenedor Principal --- */
+    .container {
+      width: 100%;
+      max-width: 520px;
+    }
 
-    .hero {
-      display: flex; align-items: center; gap: 14px; margin-bottom: 14px;
+    /* --- Encabezado con Logo y Título --- */
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
     }
-    .hero img {
-      height: 46px; width: auto; display: block;
-      filter: drop-shadow(0 5px 20px rgba(0,0,0,.25));
+    .header img {
+      height: 52px;
+      width: auto;
+      display: block;
+      margin: 0 auto 12px;
     }
-    h1 {
-      margin: 0; font-size: clamp(1.25rem, 2.2vw, 1.6rem); letter-spacing: .04em;
-      font-weight: 700;
+    .header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      letter-spacing: .02em;
     }
-    .subtitle { margin-top: 4px; color: var(--muted); font-size: .95rem; }
+    .header .subtitle {
+      margin-top: 4px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
 
+    /* --- Tarjeta de Contenido --- */
     .card {
-      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
-      border: 1px solid var(--border);
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);
+      box-shadow: var(--shadow);
     }
 
-    /* Barra de acciones */
-    .bar {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 12px; padding: 16px 18px; border-bottom: 1px solid var(--border);
-      background: rgba(255,255,255,.02);
+    /* --- Filas de Datos --- */
+    .data-rows {
+      padding: 8px 20px;
     }
-    .chips { display: flex; gap: 8px; flex-wrap: wrap; }
-    .chip {
-      background: var(--chip); color: #c8e9f9; border: 1px solid #0d2f41;
-      padding: 6px 10px; border-radius: 999px; font-size: .8rem; letter-spacing: .02em;
-    }
-
-    .primary {
-      padding: 10px 14px; border-radius: 12px; border: 1px solid #1d4ed8;
-      background: linear-gradient(180deg, #3b82f6, #2563eb);
-      color: white; font-weight: 600; cursor: pointer;
-      box-shadow: 0 8px 25px rgba(37,99,235,.35);
-      transition: transform .06s ease, box-shadow .2s ease;
-    }
-    .primary:hover { box-shadow: 0 10px 28px rgba(37,99,235,.45); }
-    .primary:active { transform: translateY(1px); }
-
-    .content { padding: 6px 18px 16px; }
-    .rows { margin-top: 8px; }
-
     .row {
-      display: grid; grid-template-columns: 170px 1fr auto; gap: 12px; align-items: center;
-      padding: 14px 0; border-bottom: 1px dashed var(--border);
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.9rem;
     }
-    .row:last-child { border-bottom: none; }
-    .label { color: var(--muted); font-weight: 600; }
-
+    .row:last-child {
+      border-bottom: none;
+    }
+    .label {
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
     .value code {
-      background: rgba(255,255,255,.04);
-      padding: 8px 10px; border-radius: 10px; display: inline-block;
-      border: 1px solid var(--border);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: .98rem; color: #eaf2ff;
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      background-color: #f1f5f9;
+      padding: 4px 8px;
+      border-radius: 6px;
     }
-    .actions { display: flex; gap: 8px; }
-    .ghost {
-      padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); cursor: pointer;
-      background: rgba(255,255,255,.02); color: var(--text);
-      transition: border-color .2s ease, box-shadow .2s ease, transform .06s ease;
-    }
-    .ghost:hover { border-color: var(--accent); box-shadow: 0 0 0 6px var(--ring); }
-    .ghost:active { transform: scale(.98); }
 
+    /* --- Pie de Página con Acciones --- */
     .footer {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 12px; padding: 14px 18px; border-top: 1px solid var(--border);
-      background: rgba(255,255,255,.02); color: var(--muted);
-      flex-wrap: wrap;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 20px;
+      border-top: 1px solid var(--border-color);
+      background-color: #f8fafc;
     }
-    .links { display: flex; gap: 10px; align-items: center; }
-    .icon {
-      width: 24px; height: 24px; display: inline-block; vertical-align: middle;
-      opacity: .9; transition: opacity .15s ease, transform .06s ease;
+    
+    .action-icons {
+      display: flex;
+      gap: 16px;
     }
-    .icon:hover { opacity: 1; transform: translateY(-1px); }
 
-    /* Responsive */
-    @media (max-width: 620px) {
-      .row { grid-template-columns: 1fr; gap: 8px; }
-      .label { order: 1; }
-      .value { order: 2; }
-      .actions { order: 3; }
-      .bar { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .icon-link {
+      color: var(--text-secondary);
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .icon-link:hover {
+      color: var(--text-accent);
+      transform: translateY(-2px);
+    }
+    .icon-link svg {
+      width: 26px;
+      height: 26px;
+    }
+    
+    .primary-btn {
+      width: 100%;
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--text-accent);
+      background-color: var(--text-accent);
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color .2s ease, box-shadow .2s ease;
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    }
+    .primary-btn:hover {
+      background-color: #2563eb;
+    }
+    .primary-btn.success {
+        background-color: var(--success-color);
+        border-color: var(--success-color);
+    }
+
+    /* --- Responsividad --- */
+    @media (max-width: 480px) {
+      .row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 10px 0;
+      }
+      .label {
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="hero">
-      <!-- Sube el archivo del logo como logo.png al repositorio -->
-      <img src="logo.png" alt="San Andrés" />
-      <div>
-        <h1>CUENTA EMPRESA</h1>
-        <div class="subtitle">Datos para transferencias – TRANSPORTES TRANSMAT LTDA.</div>
-      </div>
-    </div>
+  <div class="container">
+    <header class="header">
+      <img src="logo.png" alt="Logo San Andrés" />
+      <h1>Cuenta de Empresa</h1>
+      <div class="subtitle">TRANSPORTES TRANSMAT LTDA.</div>
+    </header>
 
-    <section class="card" aria-label="Datos bancarios de la empresa">
-      <!-- Barra superior con botón principal -->
-      <div class="bar">
-        <div class="chips" aria-hidden="true">
-          <div class="chip">Transferencias</div>
-          <div class="chip">San Andrés</div>
+    <main class="card" aria-label="Datos bancarios de la empresa">
+      <div class="data-rows">
+        <div class="row" data-label="Razón social">
+          <div class="label">Razón social</div>
+          <div class="value"><code data-value>TRANSPORTES TRANSMAT LTDA.</code></div>
         </div>
-        <button id="copy-all" class="primary" title="Copiar todos los datos">
-          Copiar todos
-        </button>
-      </div>
-
-      <!-- Contenido principal -->
-      <div class="content">
-        <div class="rows" id="data-rows">
-          <div class="row">
-            <div class="label">Razón social</div>
-            <div class="value"><code data-value>TRANSPORTES TRANSMAT LTDA.</code></div>
-            <div class="actions">
-              <button class="ghost" data-copy>Copiar</button>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="label">RUT</div>
-            <div class="value"><code data-value>76.228.396-4</code></div>
-            <div class="actions">
-              <button class="ghost" data-copy>Copiar</button>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="label">Banco</div>
-            <div class="value"><code data-value>BANCO ESTADO</code></div>
-            <div class="actions">
-              <button class="ghost" data-copy>Copiar</button>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="label">Tipo cuenta</div>
-            <div class="value"><code data-value>CUENTA CORRIENTE</code></div>
-            <div class="actions">
-              <button class="ghost" data-copy>Copiar</button>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="label">N° cuenta</div>
-            <div class="value"><code data-value>1300244404</code></div>
-            <div class="actions">
-              <button class="ghost" data-copy>Copiar</button>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="label">Correo</div>
-            <div class="value"><code data-value>contacto@pullmansa.cl</code></div>
-            <div class="actions">
-              <button class="ghost" data-copy>Copiar</button>
-              <a class="ghost" href="mailto:contacto@pullmansa.cl" style="text-decoration:none; display:inline-flex; align-items:center;">Enviar correo</a>
-            </div>
-          </div>
+        <div class="row" data-label="RUT">
+          <div class="label">RUT</div>
+          <div class="value"><code data-value>76.228.396-4</code></div>
+        </div>
+        <div class="row" data-label="Banco">
+          <div class="label">Banco</div>
+          <div class="value"><code data-value>BANCO ESTADO</code></div>
+        </div>
+        <div class="row" data-label="Tipo cuenta">
+          <div class="label">Tipo cuenta</div>
+          <div class="value"><code data-value>CUENTA CORRIENTE</code></div>
+        </div>
+        <div class="row" data-label="N° cuenta">
+          <div class="label">N° cuenta</div>
+          <div class="value"><code data-value>1300244404</code></div>
+        </div>
+        <div class="row" data-label="Correo">
+          <div class="label">Correo</div>
+          <div class="value"><code data-value>contacto@pullmansa.cl</code></div>
         </div>
       </div>
 
-      <!-- Pie con redes -->
-      <div class="footer">
-        <span>Si cambian los datos, edita esta página; el QR seguirá funcionando.</span>
-        <div class="links">
-          <!-- Instagram -->
-          <a class="icon" href="https://www.instagram.com/pullmansanandres.cl?igsh=OGM1MmJvc3ExeXdu" target="_blank" rel="noopener" aria-label="Instagram San Andrés" title="Instagram San Andrés">
-            <!-- SVG del ícono de Instagram (sin librerías externas) -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
-              <path d="M224,202.66A53.34,53.34,0,1,0,277.34,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.49-30.49C300,122.67,224,122.67,224,122.67s-76,0-94.22,8.49a54,54,0,0,0-30.49,30.49C90.8,160.89,90.8,224,90.8,224s0,63.11,8.49,82.33a54,54,0,0,0,30.49,30.49C148,345.33,224,345.33,224,345.33s76,0,94.22-8.49a54,54,0,0,0,30.49-30.49C357.2,287.11,357.2,224,357.2,224S357.2,160.89,348.71,161.71ZM224,318.6A94.6,94.6,0,1,1,318.6,224,94.61,94.61,0,0,1,224,318.6Zm98.44-170.5a22.09,22.09,0,1,1,22.09-22.09A22.1,22.1,0,0,1,322.44,148.1Z"/>
-            </svg>
+      <footer class="footer">
+        <button id="copy-all-btn" class="primary-btn">Copiar todos los datos</button>
+        <div class="action-icons">
+          <a class="icon-link" href="mailto:contacto@pullmansa.cl" aria-label="Enviar correo electrónico" title="Enviar correo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25V4.75C0 3.784.784 3 1.75 3ZM1.5 4.75v.237l10.02 6.68a.75.75 0 0 0 .962 0L22.5 4.987V4.75a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25Zm.342 14.5H22.16l-6.83-4.553L12 17.18l-3.33-2.22L1.842 19.25Z"/></svg>
+          </a>
+          <a class="icon-link" href="https://www.instagram.com/pullmansanandres.cl?igsh=OGM1MmJvc3ExeXdu" target="_blank" rel="noopener" aria-label="Instagram de San Andrés" title="Ver Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.702.01 5.555 0 5.827 0 8s.01 2.444.048 3.297c.04.852.174 1.433.372 1.942a3.9 3.9 0 0 0 .923 1.417 3.9 3.9 0 0 0 1.417.923c.502.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.297-.048c.852-.04 1.433-.174 1.942-.372a3.9 3.9 0 0 0 1.417-.923 3.9 3.9 0 0 0 .923-1.417c.198-.502.333-1.09.372-1.942C15.99 10.444 16 10.173 16 8s-.01-2.444-.048-3.297c-.04-.852-.174-1.433-.372-1.942a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.502-.198-1.09-.333-1.942-.372C10.444.01 10.173 0 8 0Zm0 1.44c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.232s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.598.92 2.5 2.5 0 0 1-.92.598c-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.389-.009-3.232-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.598-.92c-.11-.28-.24-.705-.276-1.485C1.448 10.389 1.44 10.136 1.44 8s.008-2.389.047-3.232c.036-.78.166-1.204.276-1.486a2.5 2.5 0 0 1 .598-.92c.277-.279.546-.453.92-.598.282-.11.705-.24 1.485-.276.843-.039 1.096-.046 3.232-.046ZM8 3.88c-2.277 0-4.12 1.843-4.12 4.12s1.843 4.12 4.12 4.12 4.12-1.843 4.12-4.12S10.277 3.88 8 3.88Zm0 6.78c-1.468 0-2.66-1.192-2.66-2.66s1.192-2.66 2.66-2.66 2.66 1.192 2.66 2.66-1.192 2.66-2.66 2.66Zm4.463-6.853a.96.96 0 1 0 0-1.92.96.96 0 0 0 0 1.92Z"/></svg>
           </a>
         </div>
-      </div>
-    </section>
+      </footer>
+    </main>
   </div>
 
   <script>
-    // Copiar por fila
-    document.querySelectorAll('[data-copy]').forEach(btn => {
-      btn.addEventListener('click', async () => {
-        const valueEl = btn.closest('.row').querySelector('[data-value]');
-        const text = valueEl ? valueEl.textContent.trim() : '';
-        await copyText(text, btn);
+    document.addEventListener('DOMContentLoaded', () => {
+      const copyAllBtn = document.getElementById('copy-all-btn');
+
+      // Función genérica para copiar texto y mostrar feedback en el botón
+      async function copyTextToClipboard(text, buttonElement) {
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch (err) {
+          // Fallback para navegadores antiguos que no soportan clipboard.writeText
+          const textArea = document.createElement('textarea');
+          textArea.value = text;
+          textArea.style.position = 'fixed'; // Evita que se vea en la pantalla
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textArea);
+        }
+
+        if (buttonElement) {
+          const originalText = buttonElement.textContent;
+          buttonElement.textContent = '¡Datos copiados!';
+          buttonElement.classList.add('success');
+          
+          setTimeout(() => {
+            buttonElement.textContent = originalText;
+            buttonElement.classList.remove('success');
+          }, 1500);
+        }
+      }
+
+      // Evento para el botón "Copiar todo"
+      copyAllBtn.addEventListener('click', () => {
+        const rows = document.querySelectorAll('.row[data-label]');
+        const textToCopy = Array.from(rows)
+          .map(row => {
+            const label = row.dataset.label;
+            const value = row.querySelector('[data-value]').textContent.trim();
+            return `${label}: ${value}`;
+          })
+          .join('\n');
+        
+        copyTextToClipboard(textToCopy, copyAllBtn);
       });
     });
-
-    // Copiar todos (solo valores, sin etiquetas)
-    document.getElementById('copy-all').addEventListener('click', async (e) => {
-      const values = Array.from(document.querySelectorAll('[data-value]'))
-        .map(el => el.textContent.trim());
-      const payload = values.join('\n');
-      await copyText(payload, e.currentTarget, "¡Todo copiado!");
-    });
-
-    async function copyText(text, el, okMsg = "¡Copiado!") {
-      try {
-        await navigator.clipboard.writeText(text);
-      } catch {
-        // Fallback para navegadores antiguos
-        const ta = document.createElement('textarea');
-        ta.value = text; document.body.appendChild(ta);
-        ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
-      }
-      if (el) {
-        const prev = el.textContent;
-        el.textContent = okMsg;
-        el.style.background = `linear-gradient(180deg, var(--ok), #16a34a)`;
-        setTimeout(() => {
-          el.textContent = prev;
-          el.style.background = "";
-        }, 1200);
-      }
-    }
   </script>
 </body>
 </html>
