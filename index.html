@@ -3,134 +3,258 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cuenta Empresa – TRANSPORTES TRANSMAT LTDA.</title>
-  <meta name="description" content="Datos de cuenta de TRANSPORTES TRANSMAT LTDA. para pagos y transferencias." />
+  <title>Cuenta Empresa – San Andrés</title>
+  <meta name="description" content="Datos para transferencias de TRANSPORTES TRANSMAT LTDA. (San Andrés)." />
   <style>
     :root {
-      --bg: #f6f7f9;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --accent: #0ea5e9;
-      --ring: rgba(14,165,233,0.3);
-      --radius: 16px;
+      --bg: #0b1220;         /* fondo oscuro elegante */
+      --card: #0f172a;       /* panel */
+      --text: #e5e7eb;       /* texto principal */
+      --muted: #94a3b8;      /* texto secundario */
+      --accent: #0ea5e9;     /* acento */
+      --ok: #22c55e;
+      --ring: rgba(14,165,233,.35);
+      --radius: 18px;
+      --border: #1f2937;
+      --chip: #0b3b51;
     }
     * { box-sizing: border-box; }
+    html,body { height: 100%; }
     body {
-      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg); color: var(--text);
-      display: grid; min-height: 100dvh; place-items: center; padding: 24px;
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1000px 600px at 20% -10%, #11324a 0%, transparent 60%),
+                  radial-gradient(900px 500px at 120% 10%, #2a1b53 0%, transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      display: grid; place-items: start center;
+      padding: 28px 16px 56px;
     }
+
+    .wrap { width: 100%; max-width: 780px; }
+
+    .hero {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 14px;
+    }
+    .hero img {
+      height: 46px; width: auto; display: block;
+      filter: drop-shadow(0 5px 20px rgba(0,0,0,.25));
+    }
+    h1 {
+      margin: 0; font-size: clamp(1.25rem, 2.2vw, 1.6rem); letter-spacing: .04em;
+      font-weight: 700;
+    }
+    .subtitle { margin-top: 4px; color: var(--muted); font-size: .95rem; }
+
     .card {
-      width: 100%; max-width: 680px; background: var(--card); border-radius: var(--radius);
-      box-shadow: 0 10px 25px rgba(2, 6, 23, 0.08);
-      border: 1px solid #e5e7eb; overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);
     }
-    header {
-      padding: 20px 24px; background: linear-gradient(180deg, #e6f6fe, #ffffff);
-      border-bottom: 1px solid #e5e7eb;
+
+    /* Barra de acciones */
+    .bar {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; padding: 16px 18px; border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.02);
     }
-    h1 { margin: 0; font-size: 1.25rem; letter-spacing: .04em; }
-    .subtitle { margin-top: 6px; color: var(--muted); font-size: .95rem; }
-    .content { padding: 20px 24px; }
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip {
+      background: var(--chip); color: #c8e9f9; border: 1px solid #0d2f41;
+      padding: 6px 10px; border-radius: 999px; font-size: .8rem; letter-spacing: .02em;
+    }
+
+    .primary {
+      padding: 10px 14px; border-radius: 12px; border: 1px solid #1d4ed8;
+      background: linear-gradient(180deg, #3b82f6, #2563eb);
+      color: white; font-weight: 600; cursor: pointer;
+      box-shadow: 0 8px 25px rgba(37,99,235,.35);
+      transition: transform .06s ease, box-shadow .2s ease;
+    }
+    .primary:hover { box-shadow: 0 10px 28px rgba(37,99,235,.45); }
+    .primary:active { transform: translateY(1px); }
+
+    .content { padding: 6px 18px 16px; }
+    .rows { margin-top: 8px; }
+
     .row {
       display: grid; grid-template-columns: 170px 1fr auto; gap: 12px; align-items: center;
-      padding: 12px 0; border-bottom: 1px dashed #e5e7eb;
+      padding: 14px 0; border-bottom: 1px dashed var(--border);
     }
     .row:last-child { border-bottom: none; }
     .label { color: var(--muted); font-weight: 600; }
+
     .value code {
-      background: #f1f5f9; padding: 6px 8px; border-radius: 8px; display: inline-block;
-      border: 1px solid #e2e8f0;
+      background: rgba(255,255,255,.04);
+      padding: 8px 10px; border-radius: 10px; display: inline-block;
+      border: 1px solid var(--border);
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: .95rem;
+      font-size: .98rem; color: #eaf2ff;
     }
-    .actions button {
-      padding: 8px 12px; border-radius: 10px; border: 1px solid #e2e8f0; cursor: pointer;
-      background: #fff; transition: transform .02s ease, box-shadow .2s ease, border-color .2s ease;
+    .actions { display: flex; gap: 8px; }
+    .ghost {
+      padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); cursor: pointer;
+      background: rgba(255,255,255,.02); color: var(--text);
+      transition: border-color .2s ease, box-shadow .2s ease, transform .06s ease;
     }
-    .actions button:hover { border-color: var(--accent); box-shadow: 0 0 0 4px var(--ring); }
-    .actions button:active { transform: scale(.98); }
+    .ghost:hover { border-color: var(--accent); box-shadow: 0 0 0 6px var(--ring); }
+    .ghost:active { transform: scale(.98); }
+
     .footer {
-      padding: 16px 24px; color: var(--muted); font-size: .9rem; border-top: 1px solid #e5e7eb;
-      display: flex; gap: 12px; flex-wrap: wrap; justify-content: space-between;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; padding: 14px 18px; border-top: 1px solid var(--border);
+      background: rgba(255,255,255,.02); color: var(--muted);
+      flex-wrap: wrap;
     }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    @media (max-width: 560px) {
-      .row { grid-template-columns: 1fr; gap: 6px; }
-      .actions { display: flex; gap: 8px; }
-      .value code { width: 100%; }
+    .links { display: flex; gap: 10px; align-items: center; }
+    .icon {
+      width: 24px; height: 24px; display: inline-block; vertical-align: middle;
+      opacity: .9; transition: opacity .15s ease, transform .06s ease;
+    }
+    .icon:hover { opacity: 1; transform: translateY(-1px); }
+
+    /* Responsive */
+    @media (max-width: 620px) {
+      .row { grid-template-columns: 1fr; gap: 8px; }
+      .label { order: 1; }
+      .value { order: 2; }
+      .actions { order: 3; }
+      .bar { flex-direction: column; align-items: flex-start; gap: 10px; }
     }
   </style>
 </head>
 <body>
-  <main class="card" role="main" aria-label="Datos bancarios de la empresa">
-    <header>
-      <h1>CUENTA EMPRESA</h1>
-      <div class="subtitle">Datos para transferencias – TRANSPORTES TRANSMAT LTDA.</div>
-    </header>
-    <section class="content">
-      <div class="row">
-        <div class="label">Razón social</div>
-        <div class="value"><code>TRANSPORTES TRANSMAT LTDA.</code></div>
-        <div class="actions"><button data-copy="TRANSPORTES TRANSMAT LTDA.">Copiar</button></div>
+  <div class="wrap">
+    <div class="hero">
+      <!-- Sube el archivo del logo como logo.png al repositorio -->
+      <img src="logo.png" alt="San Andrés" />
+      <div>
+        <h1>CUENTA EMPRESA</h1>
+        <div class="subtitle">Datos para transferencias – TRANSPORTES TRANSMAT LTDA.</div>
       </div>
-      <div class="row">
-        <div class="label">RUT</div>
-        <div class="value"><code>76.228.396-4</code></div>
-        <div class="actions"><button data-copy="76.228.396-4">Copiar</button></div>
+    </div>
+
+    <section class="card" aria-label="Datos bancarios de la empresa">
+      <!-- Barra superior con botón principal -->
+      <div class="bar">
+        <div class="chips" aria-hidden="true">
+          <div class="chip">Transferencias</div>
+          <div class="chip">San Andrés</div>
+        </div>
+        <button id="copy-all" class="primary" title="Copiar todos los datos">
+          Copiar todos
+        </button>
       </div>
-      <div class="row">
-        <div class="label">Banco</div>
-        <div class="value"><code>BANCO ESTADO</code></div>
-        <div class="actions"><button data-copy="BANCO ESTADO">Copiar</button></div>
+
+      <!-- Contenido principal -->
+      <div class="content">
+        <div class="rows" id="data-rows">
+          <div class="row">
+            <div class="label">Razón social</div>
+            <div class="value"><code data-value>TRANSPORTES TRANSMAT LTDA.</code></div>
+            <div class="actions">
+              <button class="ghost" data-copy>Copiar</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="label">RUT</div>
+            <div class="value"><code data-value>76.228.396-4</code></div>
+            <div class="actions">
+              <button class="ghost" data-copy>Copiar</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="label">Banco</div>
+            <div class="value"><code data-value>BANCO ESTADO</code></div>
+            <div class="actions">
+              <button class="ghost" data-copy>Copiar</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="label">Tipo cuenta</div>
+            <div class="value"><code data-value>CUENTA CORRIENTE</code></div>
+            <div class="actions">
+              <button class="ghost" data-copy>Copiar</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="label">N° cuenta</div>
+            <div class="value"><code data-value>1300244404</code></div>
+            <div class="actions">
+              <button class="ghost" data-copy>Copiar</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="label">Correo</div>
+            <div class="value"><code data-value>contacto@pullmansa.cl</code></div>
+            <div class="actions">
+              <button class="ghost" data-copy>Copiar</button>
+              <a class="ghost" href="mailto:contacto@pullmansa.cl" style="text-decoration:none; display:inline-flex; align-items:center;">Enviar correo</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="row">
-        <div class="label">Tipo cuenta</div>
-        <div class="value"><code>CUENTA CORRIENTE</code></div>
-        <div class="actions"><button data-copy="CUENTA CORRIENTE">Copiar</button></div>
-      </div>
-      <div class="row">
-        <div class="label">N° cuenta</div>
-        <div class="value"><code>1300244404</code></div>
-        <div class="actions"><button data-copy="1300244404">Copiar</button></div>
-      </div>
-      <div class="row">
-        <div class="label">Correo</div>
-        <div class="value"><code>contacto@pullmansa.cl</code></div>
-        <div class="actions">
-          <button data-copy="contacto@pullmansa.cl">Copiar</button>
+
+      <!-- Pie con redes -->
+      <div class="footer">
+        <span>Si cambian los datos, edita esta página; el QR seguirá funcionando.</span>
+        <div class="links">
+          <!-- Instagram -->
+          <a class="icon" href="https://www.instagram.com/pullmansanandres.cl?igsh=OGM1MmJvc3ExeXdu" target="_blank" rel="noopener" aria-label="Instagram San Andrés" title="Instagram San Andrés">
+            <!-- SVG del ícono de Instagram (sin librerías externas) -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+              <path d="M224,202.66A53.34,53.34,0,1,0,277.34,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.49-30.49C300,122.67,224,122.67,224,122.67s-76,0-94.22,8.49a54,54,0,0,0-30.49,30.49C90.8,160.89,90.8,224,90.8,224s0,63.11,8.49,82.33a54,54,0,0,0,30.49,30.49C148,345.33,224,345.33,224,345.33s76,0,94.22-8.49a54,54,0,0,0,30.49-30.49C357.2,287.11,357.2,224,357.2,224S357.2,160.89,348.71,161.71ZM224,318.6A94.6,94.6,0,1,1,318.6,224,94.61,94.61,0,0,1,224,318.6Zm98.44-170.5a22.09,22.09,0,1,1,22.09-22.09A22.1,22.1,0,0,1,322.44,148.1Z"/>
+            </svg>
+          </a>
         </div>
       </div>
     </section>
-    <div class="footer">
-      <span>Si los datos cambian, actualiza esta página y el QR seguirá funcionando.</span>
-      <a href="mailto:contacto@pullmansa.cl">Escríbenos</a>
-    </div>
-  </main>
+  </div>
 
   <script>
-    // Copiar al portapapeles con feedback
-    document.querySelectorAll('button[data-copy]').forEach(btn => {
+    // Copiar por fila
+    document.querySelectorAll('[data-copy]').forEach(btn => {
       btn.addEventListener('click', async () => {
-        const text = btn.getAttribute('data-copy');
-        try {
-          await navigator.clipboard.writeText(text);
-          const prev = btn.textContent;
-          btn.textContent = "¡Copiado!";
-          setTimeout(() => btn.textContent = prev, 1200);
-        } catch {
-          // Fallback
-          const ta = document.createElement('textarea');
-          ta.value = text; document.body.appendChild(ta);
-          ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
-          const prev = btn.textContent;
-          btn.textContent = "¡Copiado!";
-          setTimeout(() => btn.textContent = prev, 1200);
-        }
+        const valueEl = btn.closest('.row').querySelector('[data-value]');
+        const text = valueEl ? valueEl.textContent.trim() : '';
+        await copyText(text, btn);
       });
     });
+
+    // Copiar todos (solo valores, sin etiquetas)
+    document.getElementById('copy-all').addEventListener('click', async (e) => {
+      const values = Array.from(document.querySelectorAll('[data-value]'))
+        .map(el => el.textContent.trim());
+      const payload = values.join('\n');
+      await copyText(payload, e.currentTarget, "¡Todo copiado!");
+    });
+
+    async function copyText(text, el, okMsg = "¡Copiado!") {
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch {
+        // Fallback para navegadores antiguos
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta);
+        ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+      }
+      if (el) {
+        const prev = el.textContent;
+        el.textContent = okMsg;
+        el.style.background = `linear-gradient(180deg, var(--ok), #16a34a)`;
+        setTimeout(() => {
+          el.textContent = prev;
+          el.style.background = "";
+        }, 1200);
+      }
+    }
   </script>
 </body>
 </html>
