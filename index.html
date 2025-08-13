@@ -5,16 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cuenta Empresa – San Andrés</title>
   <meta name="description" content="Datos para transferencias de TRANSPORTES TRANSMAT LTDA. (San Andrés)." />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
     /* --- Paleta de Colores y Variables --- */
     :root {
-      --bg-color: #f8fafc;        /* Fondo claro y limpio */
-      --card-bg: #ffffff;         /* Fondo de la tarjeta */
-      --text-primary: #1e293b;    /* Texto principal (casi negro) */
-      --text-secondary: #64748b;  /* Texto secundario (gris) */
-      --text-accent: #3b82f6;      /* Texto de acento (azul) */
-      --border-color: #e2e8f0;    /* Color de borde sutil */
-      --success-color: #16a34a;   /* Color para estado de éxito */
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-primary: #1e293b;
+      --text-secondary: #64748b;
+      --accent-color: #3b82f6;
+      --border-color: #e2e8f0;
+      --success-color: #16a34a;
       --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       --radius: 12px;
@@ -46,7 +49,7 @@
       margin-bottom: 24px;
     }
     .header img {
-      height: 52px;
+      height: 60px; /* Tamaño del logo aumentado */
       width: auto;
       display: block;
       margin: 0 auto 12px;
@@ -82,7 +85,6 @@
       align-items: center;
       padding: 12px 0;
       border-bottom: 1px solid var(--border-color);
-      font-size: 0.9rem;
     }
     .row:last-child {
       border-bottom: none;
@@ -90,14 +92,16 @@
     .label {
       font-weight: 600;
       color: var(--text-secondary);
+      font-size: 0.9rem;
     }
     .value code {
       font-family: var(--font-mono);
-      font-size: 0.95rem;
+      font-size: 1rem; /* Tamaño de los datos aumentado */
       color: var(--text-primary);
       background-color: #f1f5f9;
-      padding: 4px 8px;
+      padding: 6px 10px;
       border-radius: 6px;
+      font-weight: 500;
     }
 
     /* --- Pie de Página con Acciones --- */
@@ -105,7 +109,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 16px;
+      gap: 20px;
       padding: 20px;
       border-top: 1px solid var(--border-color);
       background-color: #f8fafc;
@@ -113,34 +117,35 @@
     
     .action-icons {
       display: flex;
-      gap: 16px;
+      gap: 24px;
+      align-items: center;
     }
 
     .icon-link {
-      color: var(--text-secondary);
-      transition: color 0.2s ease, transform 0.2s ease;
+      display: inline-block;
+      font-size: 32px; /* Tamaño de los íconos de Font Awesome */
+      transition: transform 0.2s ease;
     }
     .icon-link:hover {
-      color: var(--text-accent);
-      transform: translateY(-2px);
+      transform: scale(1.1);
     }
-    .icon-link svg {
-      width: 26px;
-      height: 26px;
-    }
+    
+    /* Colores específicos para cada ícono */
+    .icon-mail { color: #4285F4; }
+    .icon-instagram { color: #E4405F; }
+    .icon-whatsapp { color: #25D366; }
     
     .primary-btn {
       width: 100%;
       padding: 12px 20px;
       border-radius: 8px;
-      border: 1px solid var(--text-accent);
-      background-color: var(--text-accent);
+      border: 1px solid var(--accent-color);
+      background-color: var(--accent-color);
       color: white;
       font-weight: 600;
       font-size: 1rem;
       cursor: pointer;
       transition: background-color .2s ease, box-shadow .2s ease;
-      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     }
     .primary-btn:hover {
       background-color: #2563eb;
@@ -157,9 +162,6 @@
         gap: 4px;
         padding: 10px 0;
       }
-      .label {
-        font-size: 0.8rem;
-      }
     }
   </style>
 </head>
@@ -171,29 +173,29 @@
       <div class="subtitle">TRANSPORTES TRANSMAT LTDA.</div>
     </header>
 
-    <main class="card" aria-label="Datos bancarios de la empresa">
+    <main class="card">
       <div class="data-rows">
-        <div class="row" data-label="Razón social">
+        <div class="row">
           <div class="label">Razón social</div>
           <div class="value"><code data-value>TRANSPORTES TRANSMAT LTDA.</code></div>
         </div>
-        <div class="row" data-label="RUT">
+        <div class="row">
           <div class="label">RUT</div>
           <div class="value"><code data-value>76.228.396-4</code></div>
         </div>
-        <div class="row" data-label="Banco">
+        <div class="row">
           <div class="label">Banco</div>
           <div class="value"><code data-value>BANCO ESTADO</code></div>
         </div>
-        <div class="row" data-label="Tipo cuenta">
+        <div class="row">
           <div class="label">Tipo cuenta</div>
           <div class="value"><code data-value>CUENTA CORRIENTE</code></div>
         </div>
-        <div class="row" data-label="N° cuenta">
+        <div class="row">
           <div class="label">N° cuenta</div>
           <div class="value"><code data-value>1300244404</code></div>
         </div>
-        <div class="row" data-label="Correo">
+        <div class="row">
           <div class="label">Correo</div>
           <div class="value"><code data-value>contacto@pullmansa.cl</code></div>
         </div>
@@ -202,12 +204,19 @@
       <footer class="footer">
         <button id="copy-all-btn" class="primary-btn">Copiar todos los datos</button>
         <div class="action-icons">
-          <a class="icon-link" href="mailto:contacto@pullmansa.cl" aria-label="Enviar correo electrónico" title="Enviar correo">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25V4.75C0 3.784.784 3 1.75 3ZM1.5 4.75v.237l10.02 6.68a.75.75 0 0 0 .962 0L22.5 4.987V4.75a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25Zm.342 14.5H22.16l-6.83-4.553L12 17.18l-3.33-2.22L1.842 19.25Z"/></svg>
+          
+          <a class="icon-link icon-mail" href="mailto:contacto@pullmansa.cl" aria-label="Enviar correo electrónico" title="Enviar correo">
+            <i class="fa-solid fa-envelope"></i>
           </a>
-          <a class="icon-link" href="https://www.instagram.com/pullmansanandres.cl?igsh=OGM1MmJvc3ExeXdu" target="_blank" rel="noopener" aria-label="Instagram de San Andrés" title="Ver Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.702.01 5.555 0 5.827 0 8s.01 2.444.048 3.297c.04.852.174 1.433.372 1.942a3.9 3.9 0 0 0 .923 1.417 3.9 3.9 0 0 0 1.417.923c.502.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.297-.048c.852-.04 1.433-.174 1.942-.372a3.9 3.9 0 0 0 1.417-.923 3.9 3.9 0 0 0 .923-1.417c.198-.502.333-1.09.372-1.942C15.99 10.444 16 10.173 16 8s-.01-2.444-.048-3.297c-.04-.852-.174-1.433-.372-1.942a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.502-.198-1.09-.333-1.942-.372C10.444.01 10.173 0 8 0Zm0 1.44c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.232s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.598.92 2.5 2.5 0 0 1-.92.598c-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.389-.009-3.232-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.598-.92c-.11-.28-.24-.705-.276-1.485C1.448 10.389 1.44 10.136 1.44 8s.008-2.389.047-3.232c.036-.78.166-1.204.276-1.486a2.5 2.5 0 0 1 .598-.92c.277-.279.546-.453.92-.598.282-.11.705-.24 1.485-.276.843-.039 1.096-.046 3.232-.046ZM8 3.88c-2.277 0-4.12 1.843-4.12 4.12s1.843 4.12 4.12 4.12 4.12-1.843 4.12-4.12S10.277 3.88 8 3.88Zm0 6.78c-1.468 0-2.66-1.192-2.66-2.66s1.192-2.66 2.66-2.66 2.66 1.192 2.66 2.66-1.192 2.66-2.66 2.66Zm4.463-6.853a.96.96 0 1 0 0-1.92.96.96 0 0 0 0 1.92Z"/></svg>
+
+          <a class="icon-link icon-instagram" href="https://www.instagram.com/pullmansanandres.cl?igsh=OGM1MmJvc3ExeXdu" target="_blank" rel="noopener" aria-label="Instagram de San Andrés" title="Ver Instagram">
+             <i class="fa-brands fa-instagram"></i>
           </a>
+
+          <a class="icon-link icon-whatsapp" href="https://wa.me/56940220037" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp" title="Contactar por WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          
         </div>
       </footer>
     </main>
@@ -217,15 +226,13 @@
     document.addEventListener('DOMContentLoaded', () => {
       const copyAllBtn = document.getElementById('copy-all-btn');
 
-      // Función genérica para copiar texto y mostrar feedback en el botón
       async function copyTextToClipboard(text, buttonElement) {
         try {
           await navigator.clipboard.writeText(text);
         } catch (err) {
-          // Fallback para navegadores antiguos que no soportan clipboard.writeText
           const textArea = document.createElement('textarea');
           textArea.value = text;
-          textArea.style.position = 'fixed'; // Evita que se vea en la pantalla
+          textArea.style.position = 'fixed';
           document.body.appendChild(textArea);
           textArea.focus();
           textArea.select();
@@ -245,15 +252,10 @@
         }
       }
 
-      // Evento para el botón "Copiar todo"
       copyAllBtn.addEventListener('click', () => {
-        const rows = document.querySelectorAll('.row[data-label]');
-        const textToCopy = Array.from(rows)
-          .map(row => {
-            const label = row.dataset.label;
-            const value = row.querySelector('[data-value]').textContent.trim();
-            return `${label}: ${value}`;
-          })
+        const values = document.querySelectorAll('[data-value]');
+        const textToCopy = Array.from(values)
+          .map(el => el.textContent.trim())
           .join('\n');
         
         copyTextToClipboard(textToCopy, copyAllBtn);
